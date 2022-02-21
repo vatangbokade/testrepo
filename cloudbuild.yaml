@@ -1,6 +1,5 @@
 steps:
 - name: 'ubuntu'
-  entrypoint: 'bash'
   args: ['bash', 'echo', '$$suchita-cloud-secrete']
   secretEnv: ['suchita-cloud-secrete']
 availableSecrets:
