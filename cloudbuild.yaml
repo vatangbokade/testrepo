@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['echo', '$$suchita-cloud-secrete']
+  secretEnv: ['suchita-cloud-secrete']
+availableSecrets:
+  secretManager:
+  - versionName: projects/business-transformers/secrets/suchita-cloud-secrete/versions/1
+    env: 'suchita-cloud-secrete'
