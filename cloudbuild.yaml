@@ -1,6 +1,6 @@
 steps:
 - name: 'bash'
-  args: ['echo $$suchita-cloud']
+  args: ['echo' MediaAgility']
   secretEnv: ['suchita-cloud']
 availableSecrets:
  secretManager:
