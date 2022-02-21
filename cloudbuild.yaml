@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'ubuntu'
   entrypoint: 'bash'
   args: ['bash', 'echo', '$$suchita-cloud-secrete']
   secretEnv: ['suchita-cloud-secrete']
@@ -7,5 +7,3 @@ availableSecrets:
   secretManager:
   - versionName: projects/business-transformers/secrets/suchita-cloud-secrete/versions/1
     env: 'suchita-cloud-secrete'
-
-#
