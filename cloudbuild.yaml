@@ -1,8 +1,15 @@
 steps:
-- name: 'bash'
-  args: ['echo', $mediaagility]
-  secretEnv: ['suchita-cloud']
-availableSecrets:
- secretManager:
-  - versionName: projects/business-transformers/secrets/suchita-cloud-secrete/versions/latest
-    env: 'suchita-cloud'
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+       gcloud secrets versions access --secret=suchita-cloud-secrete latest > /secrets/suchita-cloud-secrete
+  volumes:
+  - name: 'secrets'
+    path: '/secrets'
+- name: 'ubuntu'
+  volumes:
+  - name: 'secrets'
+    path: '/secrets'
+  args: ['cat', '/secrets/suchita-cloud-secrete']
