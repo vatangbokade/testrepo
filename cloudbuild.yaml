@@ -1,8 +1,8 @@
 steps:
 - name: 'bash'
-  args: ['bash', $$suchita-cloud-secrete]
-  secretEnv: ['suchita-cloud-secrete']
+  args: ['echo', $$suchita-cloud]
+  secretEnv: ['suchita-cloud']
 availableSecrets:
  secretManager:
-  - versionName: projects/business-transformers/secrets/suchita-cloud-secrete/versions/1
-    env: 'suchita-cloud-secrete'
+  - versionName: projects/business-transformers/secrets/suchita-cloud-secrete/versions/latest
+    env: 'suchita-cloud'
